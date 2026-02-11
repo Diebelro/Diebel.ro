@@ -7,7 +7,7 @@ const Navbar = () => (
     <div className="navbar-inner">
       <Link className="brand" to="/">Diebel Parfum</Link>
       <ul className="nav-links">
-        <li><NavLink to="/" end>Acasă</NavLink></li>
+        <li><NavLink to="/home" end>Acasă</NavLink></li>
         <li><NavLink to="/men">Bărbați</NavLink></li>
         <li><NavLink to="/women">Femei</NavLink></li>
       </ul>

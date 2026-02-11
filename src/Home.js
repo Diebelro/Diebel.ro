@@ -7,17 +7,6 @@ import "./Home.css";
 function Home() {
   return (
     <div className="home-page">
-      <section className="hero">
-        <div className="hero-overlay" />
-        <div className="hero-content">
-          <p className="hero-tagline">Parfumuri de excepție</p>
-          <h1 className="hero-title">Diebel Parfum</h1>
-          <p className="hero-subtitle">
-            Descoperă colecțiile noastre pentru bărbați și femei. Arome rafinate, prezențe de durată.
-          </p>
-        </div>
-      </section>
-
       <section className="categories">
         <h2 className="categories-heading">Explorează colecțiile</h2>
         <div className="category-cards">
