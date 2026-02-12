@@ -1,0 +1,138 @@
+.reviews-section {
+  position: relative;
+  flex-shrink: 0;
+  padding: 1rem 1.25rem;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  max-width: 280px;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews-section h3 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-gold-muted);
+  margin: 0 0 1rem;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.review-textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.review-textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.review-textarea:focus {
+  outline: none;
+  border-color: var(--color-gold-muted);
+}
+
+.review-submit {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--color-gold);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.review-submit:hover {
+  background: var(--color-gold-light);
+}
+
+.review-thanks {
+  font-size: 0.9rem;
+  color: var(--color-gold);
+  margin: 0;
+  font-style: italic;
+}
+
+.reviews-list {
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 120px;
+  overflow-y: auto;
+  flex-shrink: 1;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.review-item {
+  padding: 0.6rem 0.75rem;
+  background: rgba(15, 15, 15, 0.95);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  order: 0;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.review-comment {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    max-width: none;
+    min-width: 0;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-top: 0;
+  }
+
+  .reviews-list {
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .reviews-list {
+    max-height: 80px;
+  }
+}

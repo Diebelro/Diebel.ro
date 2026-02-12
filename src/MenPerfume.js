@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "./CartContext";
 import men1 from "./assets/men/men1.jpg";
 import men2 from "./assets/men/men2.jpg";
+import ReviewForm from "./ReviewForm";
 import "./Perfume.css";
 
 const images = [men1, men2];
@@ -54,6 +55,7 @@ function MenPerfume() {
       >
         ›
       </button>
+      <div className="perfume-bottom">
       <div className="buy-section buy-section-pro">
         <span className="buy-section-label">Parfum Bărbați</span>
         <div className="quantity-row">
@@ -91,18 +93,15 @@ function MenPerfume() {
         </div>
         <div className="buy-buttons">
           <button type="button" className="buy-button buy-button-pro" onClick={handleCheckout}>
-            Cumpără {quantity} {quantity === 1 ? "bucată" : "bucăți"}
+            Cumpără
           </button>
           <button type="button" className="buy-button buy-button-cart" onClick={handleAddToCart}>
             Adaugă în coș
           </button>
         </div>
       </div>
-      <section className="reviews-section">
-        <h3>Recenzii clienți</h3>
-        <div className="review-stars">★★★★★</div>
-        <p className="review-text">„Aromă excelentă, persistență de lungă durată.”</p>
-      </section>
+      <ReviewForm productId="men" />
+      </div>
     </div>
   );
 }

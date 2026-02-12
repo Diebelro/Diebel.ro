@@ -66,11 +66,24 @@
   color: #fff;
 }
 
-.buy-section {
+.perfume-bottom {
   position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.7) 70%, transparent 100%);
+  z-index: 10;
+}
+
+.buy-section {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -85,6 +98,21 @@
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.25rem 1.75rem;
+}
+
+@media (max-width: 480px) {
+  .buy-section-pro {
+    padding: 1rem 1.25rem;
+  }
+
+  .buy-buttons {
+    gap: 0.5rem;
+  }
+
+  .buy-button {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
 }
 
 .quantity-row {
@@ -196,41 +224,6 @@
   background: rgba(201, 169, 98, 0.15) !important;
 }
 
-.reviews-section {
-  position: absolute;
-  bottom: 2.5rem;
-  right: 1.5rem;
-  z-index: 5;
-  padding: 1rem 1.25rem;
-  background: rgba(10, 10, 10, 0.75);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  max-width: 220px;
-}
-
-.reviews-section h3 {
-  font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-gold-muted);
-  margin: 0 0 0.5rem;
-}
-
-.review-stars {
-  color: var(--color-gold);
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-}
-
-.review-text {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  margin: 0.5rem 0 0;
-  font-style: italic;
-  line-height: 1.4;
-}
-
 input[type="number"] {
   width: 60px;
   padding: 6px;
@@ -240,4 +233,36 @@ input[type="number"] {
   font-size: 1rem;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .arrow-left {
+    left: 0.75rem;
+  }
+
+  .arrow-right {
+    right: 0.75rem;
+  }
+
+  .perfume-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    max-height: 55vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .perfume-bottom .buy-section {
+    order: 1;
+    margin: 0 auto;
+    flex-shrink: 0;
+  }
+
+  .perfume-bottom .reviews-section {
+    order: 2;
+    flex-shrink: 0;
+  }
 }
