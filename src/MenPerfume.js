@@ -1,21 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "./CartContext";
 import men1 from "./assets/men/men1.jpg";
 import men2 from "./assets/men/men2.jpg";
 import "./Perfume.css";
 
 const images = [men1, men2];
-
+const STRIPE_URL = "https://buy.stripe.com/test_5kQbJ37UcbMwdy5aPO1ck00";
 const MIN_QTY = 1;
 const MAX_QTY = 99;
 
 function MenPerfume() {
+  const { addToCart } = useCart();
   const [index, setIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const handleCheckout = () => {
-    const url = new URL("https://buy.stripe.com/test_5kQbJ37UcbMwdy5aPO1ck00");
+    const url = new URL(STRIPE_URL);
     if (quantity > 1) url.searchParams.set("quantity", quantity);
     window.location.href = url.toString();
+  };
+  const handleAddToCart = () => {
+    addToCart({
+      id: "men-1",
+      name: "Parfum Bărbați",
+      quantity,
+      stripeUrl: STRIPE_URL,
+    });
   };
 
   return (
@@ -79,10 +89,20 @@ function MenPerfume() {
             </button>
           </div>
         </div>
-        <button type="button" className="buy-button buy-button-pro" onClick={handleCheckout}>
-          Cumpără {quantity} {quantity === 1 ? "bucată" : "bucăți"}
-        </button>
+        <div className="buy-buttons">
+          <button type="button" className="buy-button buy-button-pro" onClick={handleCheckout}>
+            Cumpără {quantity} {quantity === 1 ? "bucată" : "bucăți"}
+          </button>
+          <button type="button" className="buy-button buy-button-cart" onClick={handleAddToCart}>
+            Adaugă în coș
+          </button>
+        </div>
       </div>
+      <section className="reviews-section">
+        <h3>Recenzii clienți</h3>
+        <div className="review-stars">★★★★★</div>
+        <p className="review-text">„Aromă excelentă, persistență de lungă durată.”</p>
+      </section>
     </div>
   );
 }

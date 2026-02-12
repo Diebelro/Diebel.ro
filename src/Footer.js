@@ -10,13 +10,10 @@ function Footer() {
           <p className="brand-name">Diebel Parfum</p>
           <p className="tagline">Parfumuri de excepție pentru bărbați și femei.</p>
         </div>
-        <div>
-          <p className="footer-heading">Navigare</p>
-          <ul className="footer-links">
-            <li><Link to="/">Acasă</Link></li>
-            <li><Link to="/men">Parfum Bărbați</Link></li>
-            <li><Link to="/women">Parfum Femei</Link></li>
-          </ul>
+        <div className="footer-links-row">
+          <Link to="/contact" className="footer-link">Contact</Link>
+          <Link to="/livrare-retur" className="footer-link">Livrare & Retur</Link>
+          <Link to="/termeni" className="footer-link">Termeni și condiții</Link>
         </div>
         <div>
           <p className="footer-heading">Social</p>
@@ -25,7 +22,7 @@ function Footer() {
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
-        <p className="copyright">© {new Date().getFullYear()} Diebel Parfum. Toate drepturile rezervate.</p>
+        <p className="copyright">© {new Date().getFullYear()} Diebel. Toate drepturile rezervate.</p>
       </div>
     </footer>
   );

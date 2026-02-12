@@ -55,15 +55,56 @@
   color: var(--color-gold);
 }
 
+.nav-cart {
+  position: relative;
+  padding: 0.5rem 0.9rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.nav-cart:hover {
+  color: var(--color-gold);
+}
+
+.cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--color-gold);
+  color: #0a0a0a;
+  font-size: 0.65rem;
+  font-weight: 600;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
 @media (max-width: 600px) {
   .navbar-pro .navbar-inner {
-    padding: 0.875rem 1rem;
+    padding: max(0.875rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) 0.875rem max(1rem, env(safe-area-inset-left));
   }
   .navbar-pro .brand {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
   .navbar-pro .nav-links a {
-    padding: 0.4rem 0.6rem;
+    padding: 0.5rem 0.65rem;
     font-size: 0.85rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-cart {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

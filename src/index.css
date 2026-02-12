@@ -24,6 +24,20 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Mobile - Android & iPhone */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(201, 169, 98, 0.2);
 }
 
 body {
@@ -38,7 +52,7 @@ body {
 }
 
 main {
-  min-height: calc(100vh - 140px);
+  min-height: 0;
 }
 
 a {

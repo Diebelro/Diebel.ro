@@ -1,0 +1,43 @@
+.info-page {
+  min-height: calc(100vh - 200px);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.info-back {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-gold);
+  margin-bottom: 2rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.info-back:hover {
+  color: var(--color-gold-light);
+}
+
+.info-page h1 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0 0 1.5rem;
+}
+
+.info-page h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-gold);
+  margin: 2rem 0 0.75rem;
+}
+
+.info-page p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0 0 1rem;
+}
