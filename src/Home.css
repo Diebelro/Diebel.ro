@@ -29,6 +29,37 @@
   opacity: 0.4;
 }
 
+/* Hero arrows - left → Women, right → Men */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.5);
+  border: 1px solid var(--color-border);
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+}
+.hero-arrow:hover {
+  color: var(--color-gold);
+  background: rgba(10, 10, 10, 0.8);
+  border-color: var(--color-gold-muted);
+}
+.hero-arrow-left {
+  left: 1.5rem;
+}
+.hero-arrow-right {
+  right: 1.5rem;
+}
+
 .hero-content {
   position: relative;
   text-align: center;
@@ -96,8 +127,10 @@
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .category-card:hover {
@@ -132,6 +165,25 @@
   padding: 2rem 1.5rem;
   z-index: 1;
 }
+.category-arrow-hover {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: var(--color-gold);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+.category-card-men .category-arrow-hover {
+  right: 1.5rem;
+}
+.category-card-women .category-arrow-hover {
+  left: 1.5rem;
+}
+.category-card:hover .category-arrow-hover {
+  opacity: 1;
+}
 
 .category-label {
   font-family: var(--font-body);
@@ -151,12 +203,6 @@
   margin: 0 0 0.5rem;
 }
 
-.category-cta {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  transition: color var(--transition);
-}
-
-.category-card:hover .category-cta {
+.category-card:hover .category-card-content h3 {
   color: var(--color-gold);
 }

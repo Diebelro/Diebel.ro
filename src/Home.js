@@ -8,6 +8,12 @@ function Home() {
   return (
     <div className="home-page">
       <section className="hero">
+        <Link to="/women" className="hero-arrow hero-arrow-left" aria-label="Parfum Femei">
+          ←
+        </Link>
+        <Link to="/men" className="hero-arrow hero-arrow-right" aria-label="Parfum Bărbați">
+          →
+        </Link>
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="hero-tagline">Parfumuri de excepție</p>
@@ -25,18 +31,18 @@ function Home() {
             <div className="category-card-bg" style={{ backgroundImage: `url(${menImg})` }} />
             <div className="category-card-overlay" />
             <div className="category-card-content">
+              <span className="category-arrow-hover">→</span>
               <span className="category-label">Pentru el</span>
               <h3>Parfum Bărbați</h3>
-              <span className="category-cta">Vezi colecția →</span>
             </div>
           </Link>
           <Link to="/women" className="category-card category-card-women">
             <div className="category-card-bg" style={{ backgroundImage: `url(${womenImg})` }} />
             <div className="category-card-overlay" />
             <div className="category-card-content">
+              <span className="category-arrow-hover">←</span>
               <span className="category-label">Pentru ea</span>
               <h3>Parfum Femei</h3>
-              <span className="category-cta">Vezi colecția →</span>
             </div>
           </Link>
         </div>
