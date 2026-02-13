@@ -18,10 +18,10 @@ function Cos() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          items: cart.map(({ id, quantity }) => ({
-            id,
-            quantity: Math.max(1, Number(quantity) || 1),
-          })),
+          items: cart.map(({ id, quantity }) => {
+            const q = Math.max(1, Math.floor(Number(quantity)) || 1);
+            return { id, quantity: q };
+          }),
         }),
       });
       const contentType = res.headers.get("content-type");

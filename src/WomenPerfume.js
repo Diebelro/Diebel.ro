@@ -7,7 +7,6 @@ import ReviewForm from "./ReviewForm";
 import "./Perfume.css";
 
 const images = [women1, women2];
-const STRIPE_URL = "https://buy.stripe.com/test_5kQdRb5M4g2MgKhcXW1ck01";
 const MIN_QTY = 1;
 const MAX_QTY = 99;
 
@@ -15,17 +14,45 @@ function WomenPerfume() {
   const { addToCart } = useCart();
   const [index, setIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const handleCheckout = () => {
-    const url = new URL(STRIPE_URL);
-    if (quantity > 1) url.searchParams.set("quantity", quantity);
-    window.location.href = url.toString();
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [checkoutError, setCheckoutError] = useState(null);
+
+  const handleCheckout = async () => {
+    setCheckoutLoading(true);
+    setCheckoutError(null);
+    try {
+      const base = window.location.origin;
+      const res = await fetch(`${base}/api/create-checkout`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: [{ id: "women-1", quantity: Math.max(1, Number(quantity) || 1) }],
+        }),
+      });
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        setCheckoutError(
+          "Checkout-ul funcționează doar pe site-ul live (diebel.ro). Rulează „vercel dev” local sau deploy-ează pe Vercel."
+        );
+        return;
+      }
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      setCheckoutError(data.error || "Eroare la checkout");
+    } catch (err) {
+      setCheckoutError(err.message || "Eroare la conexiune");
+    } finally {
+      setCheckoutLoading(false);
+    }
   };
   const handleAddToCart = () => {
     addToCart({
       id: "women-1",
       name: "Parfum Femei",
       quantity,
-      stripeUrl: STRIPE_URL,
     });
   };
 
@@ -91,9 +118,10 @@ function WomenPerfume() {
             </button>
           </div>
         </div>
+        {checkoutError && <p className="cos-error" style={{ marginTop: "0.5rem" }}>{checkoutError}</p>}
         <div className="buy-buttons">
-          <button type="button" className="buy-button buy-button-pro" onClick={handleCheckout}>
-            Cumpără
+          <button type="button" className="buy-button buy-button-pro" onClick={handleCheckout} disabled={checkoutLoading}>
+            {checkoutLoading ? "Se încarcă..." : "Cumpără"}
           </button>
           <button type="button" className="buy-button buy-button-cart" onClick={handleAddToCart}>
             Adaugă în coș

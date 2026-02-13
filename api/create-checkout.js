@@ -12,25 +12,38 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-  const { items } = req.body || {};
+  let body = req.body;
+  if (typeof body === "string") {
+    try {
+      body = JSON.parse(body);
+    } catch (e) {
+      return res.status(400).json({ error: "Invalid JSON body" });
+    }
+  }
+  const { items } = body || {};
 
   if (!items || !Array.isArray(items) || items.length === 0) {
     return res.status(400).json({ error: "Cart is empty" });
   }
 
-  const lineItems = items
-    .map((item) => {
-      const priceId = PRICE_IDS[item.id];
-      const qty = Math.max(1, parseInt(item.quantity, 10) || 1);
-      if (!priceId || qty < 1) return null;
-      return {
-        price: priceId,
-        quantity: qty,
-        adjustable_quantity: { enabled: false },
-      };
-    })
-    .filter(Boolean);
+  // Consolidează produsele duplicate și parsează cantitatea corect
+  const byId = {};
+  for (const item of items) {
+    const id = item.id;
+    if (!PRICE_IDS[id]) continue;
+    const qty = Math.max(1, Math.floor(Number(item.quantity)) || 1);
+    byId[id] = (byId[id] || 0) + qty;
+  }
+
+  const lineItems = Object.entries(byId).map(([id, qty]) => ({
+    price: PRICE_IDS[id],
+    quantity: qty,
+    adjustable_quantity: {
+      enabled: true,
+      minimum: 1,
+      maximum: 99,
+    },
+  }));
 
   if (lineItems.length === 0) {
     return res.status(400).json({
