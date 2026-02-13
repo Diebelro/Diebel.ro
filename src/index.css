@@ -51,8 +51,62 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
+/* Layout - header, conținut, footer mereu vizibile ca pe prima pagină */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-layout main {
+  flex: 1;
   min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.app-layout main:has(.perfume-page) {
+  overflow: hidden;
+}
+
+.app-layout main > .home-page {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-layout main > .perfume-page {
+  flex: 0 0 auto;
+  height: 70vh;
+  overflow: hidden;
+}
+
+/* Men/Women: hero full viewport, header și footer fixed, imagine cover */
+.app-layout.perfume-route {
+  overflow: hidden;
+}
+
+.app-layout.perfume-route .navbar-pro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.app-layout.perfume-route .footer-pro {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.app-layout.perfume-route main {
+  flex: 1;
+  overflow: hidden;
 }
 
 a {

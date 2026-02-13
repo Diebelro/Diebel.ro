@@ -1,16 +1,19 @@
+/* Pagină Men/Women: imagine 70vh, footer vizibil fără scroll */
 .perfume-page {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 70vh;
   overflow: hidden;
   background: var(--color-bg, #0a0a0a);
 }
 
-.full-image {
+.perfume-page .full-image {
   width: 100%;
-  height: 100vh;
-  object-fit: cover;
+  height: 70vh;
+  object-fit: contain;
+  object-position: center;
   display: block;
+  background: var(--color-bg, #0a0a0a);
 }
 
 .arrow {
@@ -66,38 +69,59 @@
   color: #fff;
 }
 
+/* Buton cumpărare + recenzii - jos pe mijlocul pozei, sus de footer */
 .perfume-bottom {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  padding-bottom: max(1rem, env(safe-area-inset-bottom));
-  background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.7) 70%, transparent 100%);
-  z-index: 10;
+  gap: 0.4rem;
+  padding: 0.4rem 0.5rem;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.25) 60%, transparent 100%);
+  z-index: 1100;
+  max-width: 95%;
+  pointer-events: auto;
 }
 
 .buy-section {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
 }
 
 .buy-section-pro {
   flex-direction: column;
-  gap: 0.75rem;
-  background: rgba(10, 10, 10, 0.88);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.25rem 1.75rem;
+  gap: 0.35rem;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0.875rem;
+}
+
+.perfume-bottom .reviews-section {
+  padding: 0.5rem 0.75rem;
+  max-width: 220px;
+  min-width: 180px;
+}
+
+.perfume-bottom .reviews-button {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.perfume-bottom .reviews-button-stars {
+  font-size: 0.85rem;
+}
+
+.perfume-bottom .reviews-button-count {
+  font-size: 0.75rem;
 }
 
 @media (max-width: 480px) {
@@ -119,12 +143,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .quantity-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-gold-muted, rgba(201, 169, 98, 0.8));
 }
@@ -133,21 +157,21 @@
   display: flex;
   align-items: center;
   gap: 0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .quantity-btn {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.06);
   border: none;
   color: var(--color-text, #f5f0e8);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1;
   cursor: pointer;
@@ -160,8 +184,8 @@
 }
 
 .quantity-input {
-  width: 52px;
-  height: 40px;
+  width: 42px;
+  height: 32px;
   padding: 0;
   text-align: center;
   border: none;
@@ -180,17 +204,17 @@
 }
 
 .buy-section-label {
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-gold-muted, rgba(201, 169, 98, 0.8));
 }
 
 .buy-button {
-  padding: 14px 32px;
+  padding: 8px 20px;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -209,7 +233,7 @@
 
 .buy-buttons {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -236,6 +260,10 @@ input[type="number"] {
 }
 
 @media (max-width: 768px) {
+  .perfume-page .full-image {
+    object-fit: contain;
+  }
+
   .arrow-left {
     left: 0.75rem;
   }
@@ -247,9 +275,9 @@ input[type="number"] {
   .perfume-bottom {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.75rem;
-    padding: 0.75rem;
-    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
     max-height: 55vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;

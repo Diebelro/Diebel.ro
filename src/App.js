@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Home from "./Home";
@@ -9,23 +9,40 @@ import Cos from "./Cos";
 import Contact from "./Contact";
 import LivrareRetur from "./LivrareRetur";
 import Termeni from "./Termeni";
+import Recenzii from "./Recenzii";
+
+function AppContent() {
+  const location = useLocation();
+  const isPerfumeRoute = location.pathname === "/men" || location.pathname === "/women";
+
+  useEffect(() => {
+    document.body.style.overflow = isPerfumeRoute ? "hidden" : "";
+  }, [isPerfumeRoute]);
+
+  return (
+    <div className={`app-layout${isPerfumeRoute ? " perfume-route" : ""}`}>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/men" element={<MenPerfume />} />
+            <Route path="/women" element={<WomenPerfume />} />
+            <Route path="/cos" element={<Cos />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/livrare-retur" element={<LivrareRetur />} />
+            <Route path="/termeni" element={<Termeni />} />
+            <Route path="/recenzii/:productId" element={<Recenzii />} />
+          </Routes>
+        </main>
+        <Footer />
+    </div>
+  );
+}
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/men" element={<MenPerfume />} />
-          <Route path="/women" element={<WomenPerfume />} />
-          <Route path="/cos" element={<Cos />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/livrare-retur" element={<LivrareRetur />} />
-          <Route path="/termeni" element={<Termeni />} />
-        </Routes>
-      </main>
-      <Footer />
+      <AppContent />
     </Router>
   );
 }
