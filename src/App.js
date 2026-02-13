@@ -10,6 +10,7 @@ import Contact from "./Contact";
 import LivrareRetur from "./LivrareRetur";
 import Termeni from "./Termeni";
 import Recenzii from "./Recenzii";
+import ProductPage from "./ProductPage";
 
 function AppContent() {
   const location = useLocation();
@@ -27,6 +28,7 @@ function AppContent() {
             <Route path="/" element={<Home />} />
             <Route path="/men" element={<MenPerfume />} />
             <Route path="/women" element={<WomenPerfume />} />
+            <Route path="/product/:productId" element={<ProductPage />} />
             <Route path="/cos" element={<Cos />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/livrare-retur" element={<LivrareRetur />} />
