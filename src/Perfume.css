@@ -69,10 +69,10 @@
   color: #fff;
 }
 
-/* Buton cumpărare + recenzii - mic, între poză și footer */
+/* Buton cumpărare + recenzii - mic, între Diebel Parfum (navbar) și poză */
 .perfume-bottom {
   position: absolute;
-  bottom: 0.5rem;
+  top: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -88,12 +88,13 @@
   pointer-events: auto;
 }
 
-/* Pagini Men/Women: buton fix între poză și footer */
+/* Pagini Men/Women: buton fix între navbar și poză */
 .app-layout.perfume-route .perfume-bottom {
   position: fixed;
-  bottom: calc(2rem + env(safe-area-inset-bottom));
+  top: calc(3.2rem + env(safe-area-inset-top));
   left: 50%;
   transform: translateX(-50%);
+  bottom: auto;
   z-index: 1100;
 }
 
@@ -277,7 +278,8 @@ input[type="number"] {
   }
 
   .app-layout.perfume-route .perfume-bottom {
-    bottom: calc(1.6rem + env(safe-area-inset-bottom));
+    top: calc(2.8rem + env(safe-area-inset-top));
+    bottom: auto;
   }
 
   .perfume-bottom {
