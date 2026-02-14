@@ -22,6 +22,8 @@ function AppContent() {
 
   useEffect(() => {
     document.body.style.overflow = isPerfumeRoute ? "hidden" : "";
+    document.body.classList.toggle("perfume-route", isPerfumeRoute);
+    return () => document.body.classList.remove("perfume-route");
   }, [isPerfumeRoute]);
 
   return (

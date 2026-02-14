@@ -115,6 +115,12 @@ body {
 .app-layout.perfume-route main {
   flex: 1;
   overflow: hidden;
+  padding-bottom: 150px;
+}
+
+/* Footer fixed pe Men/Women: spațiu ca să nu intre conținutul în footer */
+body.perfume-route {
+  padding-bottom: max(120px, env(safe-area-inset-bottom));
 }
 
 a {
