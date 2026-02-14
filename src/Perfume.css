@@ -245,16 +245,31 @@ input[type="number"] {
   color: #fff;
 }
 
-/* Mobil - Android & iPhone: zona cumpărare + recenzii ~50% mai mică, nu acoperă poza */
+/* Mobil - Android & iPhone: zona sub imagine, fără suprapunere cu textul din poză */
 @media (max-width: 768px) {
   .perfume-page {
-    height: 75dvh;
-    height: 75vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+    height: 100%;
+    min-height: 0;
+    overflow: visible;
   }
+
   .perfume-page .full-image {
-    height: 75dvh;
-    height: 75vh;
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
     object-fit: contain;
+    object-position: center top;
+  }
+
+  .perfume-page .perfume-back,
+  .perfume-page .arrow {
+    grid-row: 1;
+    grid-column: 1;
   }
 
   .arrow {
@@ -270,17 +285,20 @@ input[type="number"] {
   }
 
   .perfume-bottom {
+    grid-row: 2;
+    grid-column: 1;
+    position: static;
+    transform: none;
+    left: auto;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
-    padding: 0.3rem 0.5rem;
-    padding-bottom: max(0.3rem, env(safe-area-inset-bottom));
-    bottom: 0.5rem;
-    max-height: none;
-    overflow: visible;
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.2) 70%, transparent 100%);
+    padding: 0.4rem 0.6rem;
+    padding-bottom: max(0.4rem, env(safe-area-inset-bottom));
+    background: var(--color-bg-elevated);
+    border-top: 1px solid var(--color-border);
   }
 
   .perfume-bottom .buy-section {
