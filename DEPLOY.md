@@ -172,3 +172,15 @@ Dacă unul dintre ele nu merge, așteaptă încă 1–2 ore sau verifică în pa
 - După ce conectezi domeniul, site-ul va fi accesibil la **https://diebel.ro** și **https://www.diebel.ro**.
 
 **Notă:** Fișierele `vercel.json` și `netlify.toml` sunt deja în proiect; rutele (`/`, `/men`, `/women`) vor funcționa corect la refresh.
+
+---
+
+## Publicare după modificări
+
+După orice modificare în cod, publică cu:
+```bash
+git add .
+git commit -m "Descriere modificare"
+git push
+```
+Vercel face deploy automat. Regula `.cursor/rules/publish-after-edit.mdc` îi amintește AI-ului să facă asta după fiecare edit.

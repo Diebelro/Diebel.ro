@@ -1,0 +1,14 @@
+---
+description: Publică modificările după fiecare edit (git push pentru Vercel)
+alwaysApply: true
+---
+
+# Publicare automată
+
+După orice modificare în proiectul Diebel.ro:
+
+1. **Stage + commit + push** imediat după ce aplici modificările
+2. Comanda: `git add . && git commit -m "Descriere scurtă" && git push`
+3. Mesajul de commit în română, scurt și clar (ex: "Footer mai mic pe telefon", "Ștampilă În lucru")
+
+Vercel e legat de GitHub – push-ul declanșează deploy automat. Site-ul va fi live pe diebel.ro în 1–2 minute.
