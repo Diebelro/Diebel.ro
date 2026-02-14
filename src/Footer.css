@@ -100,13 +100,16 @@
   text-align: center;
 }
 
-/* Mobile - Android & iPhone: footer puțin mai jos */
+/* Mobile - Android & iPhone: footer compact, tagline mai jos */
 @media (max-width: 700px) {
   .footer-pro {
-    padding: 0.4rem 0.75rem 0.9rem;
+    padding: 0.4rem 0.75rem 0.35rem;
     padding-left: max(0.75rem, env(safe-area-inset-left));
     padding-right: max(0.75rem, env(safe-area-inset-right));
-    padding-bottom: max(0.9rem, env(safe-area-inset-bottom));
+    padding-bottom: max(0.35rem, env(safe-area-inset-bottom));
+  }
+  .footer-pro .brand-block .tagline {
+    margin-top: 0.35rem;
   }
   .footer-pro .footer-inner {
     grid-template-columns: 1fr;
