@@ -2,7 +2,7 @@
   flex-shrink: 0;
   background: var(--color-bg-elevated);
   border-top: 1px solid var(--color-border);
-  padding: 1.25rem 1.5rem 1rem;
+  padding: 0.6rem 1rem 0.5rem;
   margin-top: auto;
 }
 
@@ -11,7 +11,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr auto auto;
-  gap: 1.5rem;
+  gap: 0.75rem;
   align-items: start;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .footer-pro .footer-link {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   color: var(--color-text-muted);
   text-decoration: none;
   transition: color var(--transition);
@@ -34,15 +34,15 @@
 
 .footer-pro .brand-block .brand-name {
   font-family: "Great Vibes", cursive;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: var(--color-gold);
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.1rem;
 }
 
 .footer-pro .brand-block .tagline {
   font-family: "Great Vibes", cursive;
-  font-size: 1.25rem;
+  font-size: 0.95rem;
   color: var(--color-gold-muted);
   margin: 0;
   white-space: nowrap;
@@ -68,12 +68,12 @@
 }
 
 .footer-pro .footer-heading {
-  font-size: 0.7rem;
+  font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-gold-muted);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.3rem;
 }
 
 .footer-pro .social-links {
@@ -92,10 +92,10 @@
 
 .footer-pro .copyright {
   grid-column: 1 / -1;
-  padding-top: 1rem;
-  margin-top: 1rem;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
   border-top: 1px solid var(--color-border);
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: var(--color-text-muted);
   text-align: center;
 }
