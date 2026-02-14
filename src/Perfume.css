@@ -69,7 +69,7 @@
   color: #fff;
 }
 
-/* Buton cumpărare + recenzii - jos pe mijlocul pozei, sus de footer */
+/* Buton cumpărare + recenzii - jos pe mijlocul pozei, deasupra footerului */
 .perfume-bottom {
   position: absolute;
   bottom: 1.5rem;
@@ -86,6 +86,15 @@
   z-index: 1100;
   max-width: 95%;
   pointer-events: auto;
+}
+
+/* Pagini Men/Women: buton fix deasupra footer-ului (footer e fixed) */
+.app-layout.perfume-route .perfume-bottom {
+  position: fixed;
+  bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
 }
 
 .buy-section {
@@ -245,7 +254,7 @@ input[type="number"] {
   color: #fff;
 }
 
-/* Mobil - Android & iPhone: layout ca pe desktop, buton peste poză */
+/* Mobil - Android & iPhone: layout ca pe desktop, buton peste poză deasupra footer */
 @media (max-width: 768px) {
   .perfume-page {
     height: 70vh;
@@ -267,9 +276,11 @@ input[type="number"] {
     right: 0.5rem;
   }
 
+  .app-layout.perfume-route .perfume-bottom {
+    bottom: calc(3rem + env(safe-area-inset-bottom));
+  }
+
   .perfume-bottom {
-    bottom: 1rem;
     padding: 0.5rem 0.75rem;
-    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
   }
 }
