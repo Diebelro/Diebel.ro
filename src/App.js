@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import WorkInProgressStamp from "./WorkInProgressStamp";
 import Home from "./Home";
 import MenPerfume from "./MenPerfume";
 import WomenPerfume from "./WomenPerfume";
@@ -25,6 +26,7 @@ function AppContent() {
 
   return (
     <div className={`app-layout${isPerfumeRoute ? " perfume-route" : ""}`}>
+        <WorkInProgressStamp />
         <Navbar />
         <main>
           <Routes>

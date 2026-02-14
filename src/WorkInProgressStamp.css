@@ -1,0 +1,29 @@
+.wip-stamp {
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  z-index: 9999;
+  padding: 0.35rem 0.7rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  background: rgba(10, 10, 10, 0.85);
+  border: 2px solid var(--color-gold);
+  border-radius: 4px;
+  transform: rotate(12deg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .wip-stamp {
+    top: 3.5rem;
+    right: 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
