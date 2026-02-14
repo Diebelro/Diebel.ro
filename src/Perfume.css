@@ -69,7 +69,7 @@
   color: #fff;
 }
 
-/* Buton cumpărare + recenzii - fundal negru */
+/* Buton cumpărare + recenzii - desktop: peste poză, spațiu deasupra footer */
 .perfume-bottom {
   position: absolute;
   bottom: calc(1.5rem + 80px);
@@ -109,8 +109,6 @@
   padding: 0.5rem 0.75rem;
   max-width: 220px;
   min-width: 180px;
-  background: rgba(10, 10, 10, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .perfume-bottom .reviews-button {
@@ -278,23 +276,21 @@ input[type="number"] {
     z-index: 1100;
     gap: 0.2rem;
     padding: 0.2rem 0.3rem;
-    background: rgba(10, 10, 10, 0.85);
+    background: rgba(10, 10, 10, 0.8);
   }
 
   .perfume-bottom .buy-section-pro {
     padding: 0.25rem 0.4rem;
     gap: 0.15rem;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
   }
 
   .perfume-bottom .reviews-section {
     padding: 0.2rem 0.35rem;
     max-width: 140px;
     min-width: 90px;
-    background: rgba(10, 10, 10, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .perfume-bottom .reviews-button {
