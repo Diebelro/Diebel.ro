@@ -245,10 +245,11 @@ input[type="number"] {
   color: #fff;
 }
 
-/* Mobil - Android & iPhone: buton mic între poză și footer */
+/* Mobil - Android & iPhone: spațiu ca să nu mai atingă footerul */
 @media (max-width: 768px) {
   .perfume-page {
     height: 70vh;
+    padding-bottom: 160px;
   }
   .perfume-page .full-image {
     height: 70vh;
@@ -269,7 +270,7 @@ input[type="number"] {
 
   .app-layout.perfume-route .perfume-bottom {
     position: fixed;
-    bottom: calc(2.8rem + 80px + env(safe-area-inset-bottom));
+    bottom: calc(2.8rem + 80px + 90px + env(safe-area-inset-bottom));
     left: 50%;
     transform: translateX(-50%);
     z-index: 1100;

@@ -123,6 +123,12 @@ body.perfume-route {
   padding-bottom: max(120px, env(safe-area-inset-bottom));
 }
 
+@media (max-width: 768px) {
+  body.perfume-route {
+    padding-bottom: max(140px, env(safe-area-inset-bottom));
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
