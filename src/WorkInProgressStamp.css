@@ -9,12 +9,12 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #f59e0b;
-  background: rgba(10, 10, 10, 0.9);
-  border: 2px solid #f59e0b;
+  color: #cd3333;
+  background: transparent;
+  border: none;
   border-radius: 4px;
   transform: rotate(12deg);
-  box-shadow: 0 2px 12px rgba(245, 158, 11, 0.3);
+  box-shadow: none;
   pointer-events: none;
   user-select: none;
 }

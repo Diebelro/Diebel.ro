@@ -69,7 +69,7 @@
   color: #fff;
 }
 
-/* Buton cumpărare + recenzii - desktop: peste poză, spațiu deasupra footer */
+/* Buton cumpărare + recenzii - doar scris și butoane, fără chenar */
 .perfume-bottom {
   position: absolute;
   bottom: calc(1.5rem + 80px);
@@ -82,7 +82,7 @@
   justify-content: center;
   gap: 0.4rem;
   padding: 0.4rem 0.5rem;
-  background: linear-gradient(to top, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.25) 60%, transparent 100%);
+  background: transparent;
   z-index: 1100;
   max-width: 95%;
   pointer-events: auto;
@@ -93,15 +93,15 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.5rem;
-  border-radius: 6px;
+  border-radius: 0;
 }
 
 .buy-section-pro {
   flex-direction: column;
   gap: 0.35rem;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
   padding: 0.5rem 0.875rem;
 }
 
@@ -109,6 +109,8 @@
   padding: 0.5rem 0.75rem;
   max-width: 220px;
   min-width: 180px;
+  background: transparent;
+  border: none;
 }
 
 .perfume-bottom .reviews-button {
@@ -143,7 +145,7 @@
   display: flex;
   align-items: center;
   gap: 0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: none;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -154,7 +156,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
+  background: transparent;
   border: none;
   color: var(--color-text, #f5f0e8);
   font-size: 1rem;
@@ -276,7 +278,7 @@ input[type="number"] {
     z-index: 1100;
     gap: 0.2rem;
     padding: 0.2rem 0.3rem;
-    background: rgba(10, 10, 10, 0.8);
+    background: transparent;
   }
 
   .perfume-bottom .buy-section-pro {
