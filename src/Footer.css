@@ -108,9 +108,6 @@
     padding-right: max(0.75rem, env(safe-area-inset-right));
     padding-bottom: max(0.35rem, env(safe-area-inset-bottom));
   }
-  .footer-pro .brand-block .tagline {
-    margin-top: 0.35rem;
-  }
   .footer-pro .footer-inner {
     grid-template-columns: 1fr;
     gap: 0.3rem;
@@ -123,7 +120,7 @@
   .footer-pro .brand-block .tagline {
     font-size: 0.75rem;
     white-space: normal;
-    margin: 0;
+    margin: 0.35rem 0 0 0;
   }
   .footer-pro .footer-links-row {
     flex-direction: row;
