@@ -75,7 +75,7 @@ body {
 }
 
 .app-layout main:has(.perfume-page) {
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .app-layout main > .home-page {
@@ -87,7 +87,8 @@ body {
 
 .app-layout main > .perfume-page {
   flex: 0 0 auto;
-  min-height: 70vh;
+  height: 70vh;
+  overflow: hidden;
 }
 
 /* Men/Women: hero full viewport, header și footer fixed, imagine cover */
@@ -114,12 +115,6 @@ body {
 .app-layout.perfume-route main {
   flex: 1;
   overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .app-layout.perfume-route main {
-    overflow-y: auto;
-  }
 }
 
 a {
