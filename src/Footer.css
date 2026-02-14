@@ -22,7 +22,7 @@
 }
 
 .footer-pro .footer-link {
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
   text-decoration: none;
   transition: color var(--transition);
@@ -34,7 +34,7 @@
 
 .footer-pro .brand-block .brand-name {
   font-family: "Great Vibes", cursive;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
   color: var(--color-gold);
   margin: 0 0 0.1rem;
@@ -42,7 +42,7 @@
 
 .footer-pro .brand-block .tagline {
   font-family: "Great Vibes", cursive;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-gold-muted);
   margin: 0;
   white-space: nowrap;
@@ -59,7 +59,7 @@
 }
 
 .footer-pro .footer-links a {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
 }
 
@@ -68,7 +68,7 @@
 }
 
 .footer-pro .footer-heading {
-  font-size: 0.62rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -82,7 +82,7 @@
 }
 
 .footer-pro .social-links a {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
 }
 
@@ -95,7 +95,7 @@
   padding-top: 0.5rem;
   margin-top: 0.5rem;
   border-top: 1px solid var(--color-border);
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
   text-align: center;
 }
@@ -114,11 +114,11 @@
     text-align: center;
   }
   .footer-pro .brand-block .brand-name {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0 0 0.1rem;
   }
   .footer-pro .brand-block .tagline {
-    font-size: 0.75rem;
+    font-size: 1rem;
     white-space: normal;
     margin: 0.35rem 0 0 0;
   }
@@ -131,11 +131,11 @@
   .footer-pro .footer-link {
     padding: 0.15rem 0.35rem;
     min-height: auto;
-    font-size: 0.62rem;
+    font-size: 0.85rem;
     display: inline-block;
   }
   .footer-pro .footer-heading {
-    font-size: 0.58rem;
+    font-size: 0.75rem;
     margin: 0 0 0.15rem;
   }
   .footer-pro .social-links {
@@ -143,12 +143,12 @@
     gap: 0.5rem;
   }
   .footer-pro .social-links a {
-    font-size: 0.62rem;
+    font-size: 0.85rem;
   }
   .footer-pro .copyright {
     padding-top: 0.35rem;
     margin-top: 0.35rem;
-    font-size: 0.58rem;
+    font-size: 0.8rem;
     border-top-width: 1px;
   }
 }
