@@ -69,7 +69,7 @@
   color: #fff;
 }
 
-/* Buton cumpărare + recenzii - doar scris și butoane, fără chenar */
+/* Buton cumpărare + recenzii - fundal negru */
 .perfume-bottom {
   position: absolute;
   bottom: calc(1.5rem + 80px);
@@ -82,7 +82,7 @@
   justify-content: center;
   gap: 0.4rem;
   padding: 0.4rem 0.5rem;
-  background: transparent;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.25) 60%, transparent 100%);
   z-index: 1100;
   max-width: 95%;
   pointer-events: auto;
@@ -93,15 +93,15 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.5rem;
-  border-radius: 0;
+  border-radius: 6px;
 }
 
 .buy-section-pro {
   flex-direction: column;
   gap: 0.35rem;
-  background: transparent;
-  backdrop-filter: none;
-  border: none;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.5rem 0.875rem;
 }
 
@@ -109,8 +109,8 @@
   padding: 0.5rem 0.75rem;
   max-width: 220px;
   min-width: 180px;
-  background: transparent;
-  border: none;
+  background: rgba(10, 10, 10, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .perfume-bottom .reviews-button {
@@ -145,7 +145,7 @@
   display: flex;
   align-items: center;
   gap: 0;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -156,7 +156,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.06);
   border: none;
   color: var(--color-text, #f5f0e8);
   font-size: 1rem;
@@ -278,21 +278,23 @@ input[type="number"] {
     z-index: 1100;
     gap: 0.2rem;
     padding: 0.2rem 0.3rem;
-    background: transparent;
+    background: rgba(10, 10, 10, 0.85);
   }
 
   .perfume-bottom .buy-section-pro {
     padding: 0.25rem 0.4rem;
     gap: 0.15rem;
-    background: transparent;
-    backdrop-filter: none;
-    border: none;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .perfume-bottom .reviews-section {
     padding: 0.2rem 0.35rem;
     max-width: 140px;
     min-width: 90px;
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .perfume-bottom .reviews-button {
