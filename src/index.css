@@ -27,6 +27,14 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Viewport mobil - Android Chrome, Safari iOS */
+@supports (height: 100dvh) {
+  .app-layout {
+    min-height: 100dvh;
+    height: 100dvh;
+  }
+}
+
 /* Mobile - Android & iPhone */
 @supports (padding: max(0px)) {
   body {

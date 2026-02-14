@@ -259,26 +259,38 @@ input[type="number"] {
   color: #fff;
 }
 
+/* Mobil - Android & iPhone */
 @media (max-width: 768px) {
+  .perfume-page {
+    height: 65dvh;
+    height: 65vh;
+  }
   .perfume-page .full-image {
+    height: 65dvh;
+    height: 65vh;
     object-fit: contain;
   }
 
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
   .arrow-left {
-    left: 0.75rem;
+    left: 0.5rem;
   }
 
   .arrow-right {
-    right: 0.75rem;
+    right: 0.5rem;
   }
 
   .perfume-bottom {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
-    max-height: 55vh;
+    gap: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    padding-bottom: max(0.4rem, env(safe-area-inset-bottom));
+    max-height: 45vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
