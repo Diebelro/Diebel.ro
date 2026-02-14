@@ -82,6 +82,7 @@ function MenPerfume() {
       >
         ›
       </button>
+      {index === 0 && (
       <div className="perfume-bottom">
       <div className="buy-section buy-section-pro">
         <span className="buy-section-label">Parfum Bărbați</span>
@@ -130,6 +131,7 @@ function MenPerfume() {
       </div>
       <ReviewForm productId="men" />
       </div>
+      )}
     </div>
   );
 }

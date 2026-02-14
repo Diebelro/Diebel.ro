@@ -82,6 +82,7 @@ function WomenPerfume() {
       >
         ›
       </button>
+      {index === 0 && (
       <div className="perfume-bottom">
       <div className="buy-section buy-section-pro">
         <span className="buy-section-label">Parfum Femei</span>
@@ -130,6 +131,7 @@ function WomenPerfume() {
       </div>
       <ReviewForm productId="women" />
       </div>
+      )}
     </div>
   );
 }
