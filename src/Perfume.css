@@ -113,15 +113,15 @@
 
 .perfume-bottom .reviews-button {
   padding: 0.45rem 0.75rem;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
 }
 
 .perfume-bottom .reviews-button-stars {
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .perfume-bottom .reviews-button-count {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 }
 
 
@@ -133,7 +133,7 @@
 }
 
 .quantity-label {
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-gold-muted, rgba(201, 169, 98, 0.8));
@@ -190,7 +190,7 @@
 }
 
 .buy-section-label {
-  font-size: 0.68rem;
+  font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-gold-muted, rgba(201, 169, 98, 0.8));
@@ -200,7 +200,7 @@
   padding: 8px 20px;
   border: none;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -294,37 +294,41 @@ input[type="number"] {
   }
 
   .perfume-bottom .reviews-button {
-    padding: 0.2rem 0.35rem;
-    font-size: 0.6rem;
+    padding: 0.3rem 0.45rem;
+    font-size: 0.85rem;
   }
 
   .perfume-bottom .reviews-button-stars {
-    font-size: 0.62rem;
+    font-size: 0.9rem;
   }
 
   .perfume-bottom .reviews-button-count {
-    font-size: 0.55rem;
+    font-size: 0.8rem;
   }
 
   .perfume-bottom .quantity-btn {
-    width: 22px;
-    height: 22px;
-    font-size: 0.75rem;
+    width: 26px;
+    height: 26px;
+    font-size: 0.9rem;
   }
 
   .perfume-bottom .quantity-input {
-    width: 28px;
-    height: 22px;
-    font-size: 0.75rem;
+    width: 32px;
+    height: 26px;
+    font-size: 0.9rem;
   }
 
   .perfume-bottom .buy-section-label {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .perfume-bottom .quantity-label {
+    font-size: 0.75rem;
   }
 
   .perfume-bottom .buy-button {
-    padding: 0.25rem 0.6rem;
-    font-size: 0.65rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.9rem;
   }
 
   .perfume-bottom .buy-buttons {
