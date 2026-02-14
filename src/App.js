@@ -11,6 +11,9 @@ import LivrareRetur from "./LivrareRetur";
 import Termeni from "./Termeni";
 import Recenzii from "./Recenzii";
 import ProductPage from "./ProductPage";
+import ProductMen from "./ProductMen";
+import Success from "./Success";
+import Cancel from "./Cancel";
 
 function AppContent() {
   const location = useLocation();
@@ -29,7 +32,10 @@ function AppContent() {
             <Route path="/men" element={<MenPerfume />} />
             <Route path="/women" element={<WomenPerfume />} />
             <Route path="/product/:productId" element={<ProductPage />} />
+            <Route path="/product-men" element={<ProductMen />} />
             <Route path="/cos" element={<Cos />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/cancel" element={<Cancel />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/livrare-retur" element={<LivrareRetur />} />
             <Route path="/termeni" element={<Termeni />} />

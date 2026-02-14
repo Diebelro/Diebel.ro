@@ -2,6 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "rewrites": [
+    { "source": "/api/checkout", "destination": "/api/checkout.js" },
     { "source": "/api/submit-review", "destination": "/api/submit-review.js" },
     { "source": "/api/review-action", "destination": "/api/review-action.js" },
     { "source": "/api/reviews", "destination": "/api/reviews.js" },

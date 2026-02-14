@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://diebel.ro",
+  "proxy": "https://diebel.ro",
   "dependencies": {
     "@upstash/redis": "^1.34.3",
     "resend": "^4.0.0",
